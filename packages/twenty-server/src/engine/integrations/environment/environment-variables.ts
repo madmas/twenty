@@ -202,6 +202,23 @@ export class EnvironmentVariables {
   @ValidateIf((env) => env.AUTH_GOOGLE_ENABLED)
   AUTH_GOOGLE_CALLBACK_URL: string;
 
+  @CastToBoolean()
+  @IsOptional()
+  @IsBoolean()
+  AUTH_OPENIDCONNECT_ENABLED = true;
+
+  @IsString()
+  @ValidateIf((env) => env.AUTH_OPENIDCONNECT_ENABLED)
+  AUTH_OPENIDCONNECT_CLIENT_ID: string;
+
+  @IsString()
+  @ValidateIf((env) => env.AUTH_OPENIDCONNECT_ENABLED)
+  AUTH_OPENIDCONNECT_CLIENT_SECRET: string;
+
+  @IsUrl({ require_tld: false })
+  @ValidateIf((env) => env.AUTH_OPENIDCONNECT_ENABLED)
+  AUTH_OPENIDCONNECT_CALLBACK_URL: string;
+
   // Storage
   @IsEnum(StorageDriverType)
   @IsOptional()

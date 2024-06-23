@@ -258,6 +258,18 @@ export const useAuth = () => {
       }` || '';
   }, []);
 
+  const handleOpenIdConnectLogin = useCallback(
+    (workspaceInviteHash?: string) => {
+      console.log('handleOpenIdConnectLogin called');
+      const authServerUrl = REACT_APP_SERVER_BASE_URL;
+      window.location.href =
+        `${authServerUrl}/auth/openidconnect/${
+          workspaceInviteHash ? '?inviteHash=' + workspaceInviteHash : ''
+        }` || '';
+    },
+    [],
+  );
+
   return {
     challenge: handleChallenge,
     verify: handleVerify,
@@ -269,5 +281,6 @@ export const useAuth = () => {
     signInWithCredentials: handleCrendentialsSignIn,
     signInWithGoogle: handleGoogleLogin,
     signInWithMicrosoft: handleMicrosoftLogin,
+    signInWithOpenIdConnect: handleOpenIdConnectLogin,
   };
 };

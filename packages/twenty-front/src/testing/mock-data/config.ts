@@ -6,10 +6,11 @@ export const mockedClientConfig: ClientConfig = {
   signUpDisabled: false,
   debugMode: false,
   authProviders: {
-    google: true,
-    password: true,
+    google: false,
+    password: false,
     magicLink: false,
     microsoft: false,
+    openidconnect: true,
     __typename: 'AuthProviders',
   },
   telemetry: {

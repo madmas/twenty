@@ -28,11 +28,13 @@ import { ConnectedAccountWorkspaceEntity } from 'src/modules/connected-account/s
 import { CalendarChannelWorkspaceEntity } from 'src/modules/calendar/standard-objects/calendar-channel.workspace-entity';
 import { MessageChannelWorkspaceEntity } from 'src/modules/messaging/common/standard-objects/message-channel.workspace-entity';
 import { OnboardingModule } from 'src/engine/core-modules/onboarding/onboarding.module';
+import { OpenIDConnectAuthController } from 'src/engine/core-modules/auth/controllers/openidconnect-auth.controller';
 
 import { AuthResolver } from './auth.resolver';
 
 import { JwtAuthStrategy } from './strategies/jwt.auth.strategy';
 import { AuthService } from './services/auth.service';
+
 const jwtModule = JwtModule.registerAsync({
   useFactory: async (environmentService: EnvironmentService) => {
     return {
@@ -69,6 +71,7 @@ const jwtModule = JwtModule.registerAsync({
   controllers: [
     GoogleAuthController,
     MicrosoftAuthController,
+    OpenIDConnectAuthController,
     GoogleAPIsAuthController,
     VerifyAuthController,
   ],

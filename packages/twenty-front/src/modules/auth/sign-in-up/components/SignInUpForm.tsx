@@ -18,6 +18,7 @@ import {
 import { useSignInUpForm } from '@/auth/sign-in-up/hooks/useSignInUpForm';
 import { useSignInWithGoogle } from '@/auth/sign-in-up/hooks/useSignInWithGoogle';
 import { useSignInWithMicrosoft } from '@/auth/sign-in-up/hooks/useSignInWithMicrosoft';
+import { useSignInWithOpenIdConnect } from '@/auth/sign-in-up/hooks/useSignInWithOpenIdConnect';
 import { isRequestingCaptchaTokenState } from '@/captcha/states/isRequestingCaptchaTokenState';
 import { authProvidersState } from '@/client-config/states/authProvidersState';
 import { captchaProviderState } from '@/client-config/states/captchaProviderState';
@@ -56,6 +57,7 @@ export const SignInUpForm = () => {
   const [showErrors, setShowErrors] = useState(false);
   const { signInWithGoogle } = useSignInWithGoogle();
   const { signInWithMicrosoft } = useSignInWithMicrosoft();
+  const { signInWithOpenIdConnect } = useSignInWithOpenIdConnect();
   const { form } = useSignInUpForm();
   const { handleResetPassword } = useHandleResetPassword();
 
@@ -121,6 +123,7 @@ export const SignInUpForm = () => {
     isEmailStepSubmitButtonDisabledCondition ||
     isPasswordStepSubmitButtonDisabledCondition;
 
+  console.log('AuthProviders: ', authProviders);
   return (
     <>
       <StyledContentContainer>
@@ -142,6 +145,18 @@ export const SignInUpForm = () => {
               Icon={() => <IconMicrosoft size={theme.icon.size.lg} />}
               title="Continue with Microsoft"
               onClick={signInWithMicrosoft}
+              fullWidth
+            />
+            <HorizontalSeparator visible={authProviders.openidconnect} />
+          </>
+        )}
+
+        {authProviders.openidconnect && (
+          <>
+            <MainButton
+              Icon={() => <IconMicrosoft size={theme.icon.size.lg} />}
+              title="Continue with OpenIdConnect"
+              onClick={signInWithOpenIdConnect}
               fullWidth
             />
             <HorizontalSeparator visible={authProviders.password} />

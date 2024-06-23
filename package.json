@@ -144,6 +144,7 @@
     "passport-jwt": "^4.0.1",
     "passport-local": "^1.0.0",
     "passport-microsoft": "^2.0.0",
+    "passport-openidconnect": "^0.1.2",
     "patch-package": "^8.0.0",
     "pg": "^8.11.3",
     "pg-boss": "^9.0.3",

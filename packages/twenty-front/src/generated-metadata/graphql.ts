@@ -64,6 +64,7 @@ export type AuthProviders = {
   magicLink: Scalars['Boolean']['output'];
   microsoft: Scalars['Boolean']['output'];
   password: Scalars['Boolean']['output'];
+  openidconnect: Scalars['Boolean']['output'];
 };
 
 export type AuthToken = {

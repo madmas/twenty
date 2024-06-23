@@ -39840,6 +39840,16 @@ __metadata:
   languageName: node
   linkType: hard
 
+"passport-openidconnect@npm:^0.1.2":
+  version: 0.1.2
+  resolution: "passport-openidconnect@npm:0.1.2"
+  dependencies:
+    oauth: "npm:0.10.x"
+    passport-strategy: "npm:1.x.x"
+  checksum: 4d4662b91e2580baa7cf2f341904c352de9ec776a3897f8bf51a90f248ee7dab26b94e2e3c590d14821b04b0fa95cb8d7cfad6edc095e3966b7666e8779b0b68
+  languageName: node
+  linkType: hard
+
 "passport-strategy@npm:1.x.x, passport-strategy@npm:^1.0.0":
   version: 1.0.0
   resolution: "passport-strategy@npm:1.0.0"
@@ -47491,6 +47501,7 @@ __metadata:
     passport-jwt: "npm:^4.0.1"
     passport-local: "npm:^1.0.0"
     passport-microsoft: "npm:^2.0.0"
+    passport-openidconnect: "npm:^0.1.2"
     patch-package: "npm:^8.0.0"
     pg: "npm:^8.11.3"
     pg-boss: "npm:^9.0.3"

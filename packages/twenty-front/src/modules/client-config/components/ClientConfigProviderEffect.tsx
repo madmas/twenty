@@ -41,10 +41,12 @@ export const ClientConfigProviderEffect = () => {
 
   useEffect(() => {
     if (!loading && isDefined(data?.clientConfig)) {
+      console.log('ClientConfPE.useEffect: clientConfig: ', data?.clientConfig);
       setIsClientConfigLoaded(true);
       setAuthProviders({
         google: data?.clientConfig.authProviders.google,
         microsoft: data?.clientConfig.authProviders.microsoft,
+        openidconnect: data?.clientConfig.authProviders.openidconnect,
         password: data?.clientConfig.authProviders.password,
         magicLink: false,
       });

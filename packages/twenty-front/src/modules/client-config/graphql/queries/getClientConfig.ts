@@ -7,6 +7,7 @@ export const GET_CLIENT_CONFIG = gql`
         google
         password
         microsoft
+        openidconnect
       }
       billing {
         isBillingEnabled
